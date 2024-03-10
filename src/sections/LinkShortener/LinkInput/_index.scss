@@ -1,0 +1,105 @@
+.link-shortener {
+  transform: translateY(calc(-10rem / 2));
+
+  @include breakpoint-up(large) {
+    transform: translateY(calc(-10.165rem / 2));
+  }
+}
+
+.link-input {
+  form {
+    @extend .container;
+    background-color: $clr-primary-dark;
+    background-image: url("../../../images/bg-shorten-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    padding: 1.5rem;
+    border-radius: 0.5625rem;
+    display: grid;
+    gap: 1rem;
+
+    @include breakpoint-up(medium) {
+      background-image: url("../../../images/bg-shorten-desktop.svg");
+      background-size: cover;
+      background-position: top left;
+    }
+
+    @include breakpoint-down(medium) {
+      max-width: 35rem;
+    }
+
+    @include breakpoint-up(large) {
+      padding: 3.25rem 4rem;
+      grid-template-columns: 4fr 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  input {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: none;
+
+    &::placeholder {
+      color: $clr-neutral-400;
+    }
+
+    @include breakpoint-up(large) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input,
+  button {
+    width: 100%;
+    font-size: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.3125rem;
+
+    @include breakpoint-up(large) {
+      font-size: 1.125rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border-radius: 0.625rem;
+    }
+  }
+
+  .invalid-container {
+    position: relative;
+
+    .invalid-input {
+      border: 0.1875rem solid $clr-secondary;
+      color: $clr-secondary;
+      padding-top: 0.5625rem;
+      padding-bottom: 0.5625rem;
+
+      @include breakpoint-down(medium) {
+        margin-bottom: 2.375rem;
+      }
+
+      @include breakpoint-up(large) {
+        padding-top: 0.875rem;
+        padding-bottom: 0.875rem;
+      }
+    }
+
+    .invalid-message {
+      position: absolute;
+      top: 3.5rem;
+      left: 0;
+      color: $clr-secondary;
+      font-size: 0.75rem;
+
+      @include breakpoint-up(large) {
+        top: 4.1875rem;
+        font-size: 0.875rem;
+      }
+    }
+  }
+}

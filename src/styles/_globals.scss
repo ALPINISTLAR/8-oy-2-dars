@@ -1,0 +1,22 @@
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: $fs-md;
+  font-weight: $fw-regular;
+  color: $clr-neutral-400;
+}
+
+.container {
+  max-width: 70rem;
+  @include margin-x-auto;
+}
+
+.gray-bg {
+  background-color: $clr-neutral-200;
+  margin-top: 10.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  @include breakpoint-up(large) {
+    margin-top: 9.5rem;
+  }
+}

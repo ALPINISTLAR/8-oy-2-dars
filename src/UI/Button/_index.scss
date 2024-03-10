@@ -1,0 +1,34 @@
+.btn {
+  display: block;
+  background-color: $clr-primary-light;
+  color: $clr-neutral-100;
+  font-size: 1.125rem;
+  font-weight: $fw-bold;
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-rounded {
+  border-radius: 2rem;
+  padding: 0.875rem 2.875rem;
+}
+
+.copied {
+  background-color: $clr-primary-dark;
+}
+
+@include media-hover {
+  .btn:hover {
+    background: linear-gradient(hsla(180, 66%, 49%, 0.5), hsla(180, 66%, 49%, 0.5)),
+      linear-gradient($clr-neutral-100, $clr-neutral-100);
+  }
+
+  .copied:hover {
+    background: linear-gradient(hsla(257%, 27%, 26%, 0.5), hsla(257%, 27%, 26%, 0.5)),
+      linear-gradient($clr-neutral-100, $clr-neutral-100);
+  }
+}

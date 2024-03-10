@@ -1,0 +1,115 @@
+.link-card {
+  background-color: $clr-neutral-100;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.9375rem;
+  @extend .container;
+
+  @include breakpoint-down(medium) {
+    max-width: 35rem;
+  }
+
+  @include breakpoint-up(large) {
+    font-size: 1.25rem;
+    padding: 1rem 1.5rem 1rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .links-container {
+    position: relative;
+    max-width: 100%;
+
+    @include breakpoint-up(large) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include breakpoint-down(medium) {
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: calc(50% - 0.03125rem);
+        left: -1rem;
+        width: calc(100% + 2rem);
+        height: 0.0625rem;
+        opacity: 0.5;
+        background-color: $clr-neutral-300;
+      }
+    }
+  }
+
+  &__original {
+    color: $clr-neutral-700;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include breakpoint-down(medium) {
+      padding-bottom: 0.75rem;
+    }
+
+    @include breakpoint-up(large) {
+      max-width: 35ch;
+    }
+  }
+
+  &__shortened {
+    color: $clr-primary-light;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include breakpoint-down(medium) {
+      padding-top: 0.75rem;
+    }
+
+    @include breakpoint-up(large) {
+      max-width: 30ch;
+    }
+  }
+
+  button {
+    font-size: 0.875rem;
+    padding: 0.625rem;
+    border-radius: 0.25rem;
+
+    @include breakpoint-down(medium) {
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    @include breakpoint-up(large) {
+      padding: 0.625rem 2rem;
+    }
+  }
+}
+
+.loading {
+  padding: 2rem;
+
+  animation-name: loading-card-animation-pulse;
+  animation-duration: 1100ms;
+  animation-iteration-count: infinite;
+  opacity: 1;
+}
+
+@keyframes loading-card-animation-pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

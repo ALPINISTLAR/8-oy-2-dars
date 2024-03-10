@@ -1,0 +1,63 @@
+.statistics {
+  text-align: center;
+  padding-bottom: 5rem;
+  @extend .container;
+
+  @include breakpoint-up(large) {
+    padding-bottom: 13rem;
+  }
+
+  h2,
+  p {
+    max-width: 47ch;
+    @include margin-x-auto;
+  }
+
+  h2,
+  h3 {
+    color: $clr-neutral-700;
+  }
+
+  h2 {
+    font-size: 1.625rem;
+    margin-bottom: 1rem;
+
+    @include breakpoint-up(large) {
+      font-size: 2.25rem;
+      margin-top: 2rem;
+    }
+  }
+
+  p {
+    font-size: 1.0625rem;
+  }
+
+  &__cards-grid {
+    margin-top: 5.75rem;
+    display: grid;
+    gap: 5.75rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: calc(50% - 0.25rem);
+      display: block;
+      width: 0.5rem;
+      height: 100%;
+      background-color: $clr-primary-light;
+
+      @include breakpoint-up(large) {
+        height: 0.5rem;
+        width: calc(100% - 6rem);
+        left: 3rem;
+        top: 9.5rem;
+      }
+    }
+
+    @include breakpoint-up(large) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.875rem;
+    }
+  }
+}
